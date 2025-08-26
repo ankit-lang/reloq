@@ -28,8 +28,9 @@ import {
 import TextType from '@/components/Type';
 import SplitText from '@/components/Split';
 import { motion } from 'framer-motion';
-import AnimatedContent, { TextAnimate } from '@/components/Culttext';
+// import AnimatedContent, { TextAnimate } from '@/components/Culttext';
 import FadeContent from '@/components/Fade';
+import AnimatedContent from '@/components/Culttext';
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
