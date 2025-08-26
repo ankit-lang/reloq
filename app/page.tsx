@@ -25,6 +25,11 @@ import {
   Linkedin,
   Youtube
 } from 'lucide-react';
+import TextType from '@/components/Type';
+import SplitText from '@/components/Split';
+import { motion } from 'framer-motion';
+import AnimatedContent, { TextAnimate } from '@/components/Culttext';
+import FadeContent from '@/components/Fade';
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -44,10 +49,36 @@ export default function Home() {
     }
   ];
 
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
   return (
-    <div className="min-h-screen bg-white">
+    <>
+    <motion.div
+      className="min-h-screen bg-white"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={staggerContainer}
+    >
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <motion.header
+        className="bg-white shadow-sm border-b"
+        variants={fadeIn}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -132,10 +163,16 @@ Packing Services</a></li>
               <li><a href="#contact" className="block px-4 py-2">Contact</a></li>
             </ul>
           </div>
-      </header>
+      </motion.header>
 
       {/* Hero Section */}
-      <section id="home" className="relative h-screen bg-gradient-to-r from-gray-900/70 to-gray-800/70">
+      <motion.section
+        id="home"
+        className="relative h-screen bg-gradient-to-r from-gray-900/70 to-gray-800/70"
+        variants={fadeIn}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -144,8 +181,11 @@ Packing Services</a></li>
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-800/60" />
         
-        <div className="relative container mx-auto px-4 h-full flex items-center">
-          <div className="mx-auto text-white   ">
+        <motion.div
+          className="relative container mx-auto px-4 h-full flex items-center"
+          variants={staggerContainer}
+        >
+          <motion.div className="mx-auto text-white" variants={fadeIn}>
             {/* <div className="mb-8"> */}
               {/* <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mb-6"> */}
                 {/* <Shield className="w-12 h-12 text-white" />
@@ -159,28 +199,74 @@ Packing Services</a></li>
             {/* </div> */}
             
             <div className="mb-8 max-w-4xl flex-col items-center justify-center ">
-              <h2 className="text-6xl font-semibold mb-2">
+              <motion.h2 className="text-5xl font-semibold mb-2" variants={fadeIn}>
                 
-               Relocation Made Easy with Relo8U  <span className="text-orange-500">Your Moving Partner.</span>
-              </h2>
-              <p className="text-lg text-gray-300 leading-relaxed">
-          We specialize in making relocations smooth and stress-free
-              </p>
-              <Button size="lg" className="bg-orange-500 text-center mt-10 mx-auto hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold">
-              Get a Free Quote
-            </Button>
-            </div>
-            
-            
-          </div>
-        </div>
-      </section>
+                <SplitText
+  text=" Relocation Made Easy with Relo8U "
+  className="text-left md:text-center font-semibold "
+  delay={100}
+  duration={2}
+  ease="power3.out"
+  splitType="words"
+  from={{ opacity: 0, y: 40 }}
+  to={{ opacity: 1, y: 0 }}
+  threshold={0.1}
+  rootMargin="-100px"
+  textAlign="left"
+  // onLetterAnimationComplete={handleAnimationComplete}
+/>
+               <span className="text-orange-500">Your Moving Partner.</span>
+              
+              </motion.h2>
+              <motion.p
+              className="text-lg text-gray-300 leading-relaxed"
+              variants={fadeIn}
+            >
+<TextType 
+  text={[" We specialize in making relocations smooth and stress-free."]}
+  typingSpeed={95}
+  pauseDuration={500}
+  showCursor={false}
+  cursorCharacter="|"
+/>
+         
+              </motion.p>
+  </div>  
+              <motion.div variants={fadeIn}>
+              <Button
+                size="lg"
+                className="bg-orange-500 text-center mt-10 mx-auto hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold"
+              >
+                Get a Free Quote
+              </Button>
+              </motion.div>
+            </motion.div>
+        </motion.div>
+      </motion.section>
 
       {/* Quote Form Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-32 ">
+      <motion.section
+        className="py-20 bg-gray-50"
+        variants={staggerContainer}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {/* ...existing code... */}
+        <motion.div className="container mx-auto px-4 md:px-32" variants={fadeIn}>
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
+                  <AnimatedContent
+  distance={150}
+  direction="horizontal"
+  reverse={true}
+  duration={1.2}
+  ease="bounce.out"
+  initialOpacity={0.2}
+  animateOpacity
+  scale={1.1}
+  threshold={0.2}
+  delay={0.3}
+>
               <div className="mb-8">
                 <Badge className="bg-orange-500 text-white mb-4 text-sm px-3 py-1">
                   YOUR 5-STAR MOVING COMPANY!
@@ -192,13 +278,16 @@ Packing Services</a></li>
               
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  In an industry often clouded by uncertainty, Kratos Moving Company stands 
+  <div>In an industry often clouded by uncertainty, Kratos Moving Company stands 
                   as a beacon of trust and reliability. We're not just movers; we're your 
                   partners in seamless transitions. Whether you're a local business seeking a 
                   dependable moving solution, a family embarking on a new adventure, or an 
                   individual planning a fresh start—our passion, let our passion and 
                   purpose. Our expert team brings unmatched professionalism and cost to 
-                  every job.
+                  every job.</div>
+                  {/* <TextAnimate text=" " type="rollIn" /> */}
+
+                 
                 </p>
                 
                 <p>
@@ -217,6 +306,7 @@ Packing Services</a></li>
                 </p>
               </div>
 
+</AnimatedContent>
               <div className="mt-8">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
                   <CheckCircle className="w-6 h-6 text-blue-500 mr-2" />
@@ -234,6 +324,18 @@ Packing Services</a></li>
               </div>
             </div>
             
+                          <AnimatedContent
+  distance={150}
+  direction="horizontal"
+  reverse={false}
+  duration={1.2}
+  ease="bounce.out"
+  initialOpacity={0.2}
+  animateOpacity
+  scale={1.1}
+  threshold={0.2}
+  delay={0.3}
+>
             <div>
               <Card className="shadow-2xl border-0">
                 <CardHeader className="bg-orange-500 text-white">
@@ -341,13 +443,21 @@ Packing Services</a></li>
                 </CardContent>
               </Card>
             </div>
+            </AnimatedContent>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
+            
 
       {/* Moving Process Section */}
-      <section className="py-20 md:px-32 bg-white">
-        <div className="container mx-auto px-4">
+      <motion.section
+        className="py-20 md:px-32 bg-white"
+        variants={staggerContainer}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {/* ...existing code... */}
+        <motion.div className="container mx-auto px-4" variants={fadeIn}>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <img 
@@ -356,6 +466,8 @@ Packing Services</a></li>
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />
             </div>
+            <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0.1}>
+  {/* Anything placed inside this container will be fade into view */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-2">Our Moving Process:</h2>
               <h3 className="text-2xl font-semibold text-gray-700 mb-8">How Do We Work?</h3>
@@ -414,20 +526,20 @@ Packing Services</a></li>
                 Get More
               </Button>
             </div>
+</FadeContent>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-r from-gray-100 to-gray-200 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
-          style={{
-            backgroundImage: "url('https://images.pexels.com/photos/5025671/pexels-photo-5025671.jpeg?auto=compress&cs=tinysrgb&w=1600')"
-          }}
-        />
-        
-        <div className="relative container mx-auto px-4 text-center">
+      <motion.section
+        className="py-20 bg-gradient-to-r from-gray-100 to-gray-200 relative overflow-hidden"
+        variants={staggerContainer}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {/* ...existing code... */}
+        <motion.div className="relative container mx-auto px-4 text-center" variants={fadeIn}>
           <div className="mb-12">
             <div className="flex items-center justify-center mb-4">
               <Star className="w-8 h-8 text-orange-500 mr-2" />
@@ -458,12 +570,18 @@ Packing Services</a></li>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Mission Section */}
-      <section className="py-20 md:px-32  bg-white">
-        <div className="container mx-auto px-4">
+      <motion.section
+        className="py-20 md:px-32  bg-white"
+        variants={staggerContainer}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {/* ...existing code... */}
+        <motion.div className="container mx-auto px-4" variants={fadeIn}>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <img 
@@ -478,22 +596,55 @@ Packing Services</a></li>
               </h2>
               
               <div className="space-y-4 text-gray-700 text-center leading-relaxed">
-                <p> 
-                  At Kratos Moving Company, our promise to make your transition seamless and stress-free, providing top-quality services at competitive rates. Whether you're planning a local move or an organized moving experience, whether local or international, our dedicated team of experts ensures efficient and professional service, making your moving experience as smooth as the best prepared decision.
-                </p>
+                <SplitText
+  text="     At Kratos Moving Company, our promise to make your transition seamless and stress-free, providing top-quality services at competitive rates. Whether you're planning a local move or an organized moving experience, whether local or international, our dedicated team of experts ensures efficient and professional service, making your moving experience as smooth as the best prepared decision.
+               "
+  className=" text-center"
+  delay={100}
+  duration={0.6}
+  ease="power3.out"
+  splitType="lines"
+  from={{ opacity: 0, y: 40 }}
+  to={{ opacity: 1, y: 0 }}
+  threshold={0.1}
+  rootMargin="-100px"
+  textAlign="center"
+  // onLetterAnimationComplete={handleAnimationComplete}
+/>
+               
+               <SplitText
+  text="        We handle all aspects of your move with meticulous care and attention to detail, including packing, secure storage, and single item moves. Our mission is to exceed your expectations by taking the stress out of the entire process. Our responsibility is to make you feel comfortable and well-informed throughout the moving process. Let us take the stress out of your move, allowing you to focus on the excitement of your new beginning!"
+  className="text-center"
+  delay={100}
+  duration={0.6}
+  ease="power3.out"
+  splitType="lines"
+  from={{ opacity: 0, y: 40 }}
+  to={{ opacity: 1, y: 0 }}
+  threshold={0.1}
+  rootMargin="-100px"
+  textAlign="center"
+  // onLetterAnimationComplete={handleAnimationComplete}
+/>
                 
                 <p>
-                  We handle all aspects of your move with meticulous care and attention to detail, including packing, secure storage, and single item moves. Our mission is to exceed your expectations by taking the stress out of the entire process. Our responsibility is to make you feel comfortable and well-informed throughout the moving process. Let us take the stress out of your move, allowing you to focus on the excitement of your new beginning!
+          
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Services Logos Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
+      <motion.section
+        className="py-20 bg-gray-50"
+        variants={staggerContainer}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {/* ...existing code... */}
+        <motion.div className="container mx-auto px-4 text-center" variants={fadeIn}>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
              <span className="text-orange-500">Why Choose Us ?</span>
           </h2>
@@ -523,12 +674,18 @@ Packing Services</a></li>
               <p className="text-orange-500 font-semibold">CONTRACTING</p>
             </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Realtor Section */}
-      <section className="py-20 md:px-32 text-center bg-white">
-        <div className="container mx-auto px-4">
+      <motion.section
+        className="py-20 md:px-32 text-center bg-white"
+        variants={staggerContainer}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {/* ...existing code... */}
+        <motion.div className="container mx-auto px-4" variants={fadeIn}>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <img 
@@ -545,11 +702,40 @@ Packing Services</a></li>
               
               <div className="space-y-4 text-gray-700 leading-relaxed mb-8">
                 <p>
-                  Realtors looking for a reliable, cost-effective moving company should consider partnering with Kratos Moving Company. Not only will you receive cash rewards for each successful move, but you'll also benefit from greater reach through our customer network.
+                  <SplitText
+  text="Realtors looking for a reliable, cost-effective moving company should consider partnering with Kratos Moving Company. Not only will you receive cash rewards for each successful move, but you'll also benefit from greater reach through our customer network."
+  className="text-center"
+  delay={100}
+  duration={0.6}
+  ease="power3.out"
+  splitType="lines"
+  from={{ opacity: 0, y: 40 }}
+  to={{ opacity: 1, y: 0 }}
+  threshold={0.1}
+  rootMargin="-100px"
+  textAlign="center"
+  // onLetterAnimationComplete={handleAnimationComplete}
+/>
+                  
                 </p>
                 
+
+                <SplitText
+  text="   Our dedicated partnership program is designed with realtors in mind — offering exclusive discounts for your clients, priority booking, and streamlined communication. When you recommend our service that reflects well on your brand. By partnering with Kratos Moving, you're not just recommending a mover — you're extending your client care beyond the closing table. Let us handle the heavy lifting while you continue to build trust and long-term relationships with every client you serve."
+  className=" text-center"
+  delay={100}
+  duration={0.6}
+  ease="power3.out"
+  splitType="lines"
+  from={{ opacity: 0, y: 40 }}
+  to={{ opacity: 1, y: 0 }}
+  threshold={0.1}
+  rootMargin="-100px"
+  textAlign="center"
+  // onLetterAnimationComplete={handleAnimationComplete}
+/>
                 <p>
-                  Our dedicated partnership program is designed with <span className="text-blue-500 font-semibold">realtors in mind</span> — offering exclusive discounts for your clients, priority booking, and streamlined communication. When you recommend our service that reflects well on your brand. By partnering with Kratos Moving, you're not just recommending a mover — you're extending your client care beyond the closing table. Let us handle the heavy lifting while you continue to build trust and long-term relationships with every client you serve.
+               
                 </p>
               </div>
               
@@ -558,12 +744,18 @@ Packing Services</a></li>
               </Button>
             </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Contact Section */}
-      <section className="py-12 bg-gray-100">
-        <div className="container mx-auto px-4 text-center">
+      <motion.section
+        className="py-12 bg-gray-100"
+        variants={staggerContainer}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {/* ...existing code... */}
+        <motion.div className="container mx-auto px-4 text-center" variants={fadeIn}>
           <div className="mb-8">
             <p className="text-gray-700 mb-2">
               AM – 8 PM, 7 Days a Week
@@ -581,11 +773,16 @@ Packing Services</a></li>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Footer */}
-      <footer className="bg-[#ff9902]   md:px-32 text-white py-16">
+      <motion.footer
+        className="bg-[#ff9902] md:px-32 text-white py-16"
+        variants={fadeIn}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
@@ -668,11 +865,12 @@ Packing Services</a></li>
           </div>
           
         </div>
-      </footer>
+      </motion.footer>
           <div className="border-t text-black/90 border-white/20  p-5 text-center text-lg">
             <p>Copyright © 2025 Reloq8U Company | <a href="#" className="underline">Privacy Policy</a></p>
             {/* <p className="mt-2">Made By <a href="#" className="underline">Reloq Group - Get a Quote for Web Design Development Services - across the Streets to Us</a></p> */}
           </div>
-    </div>
+    </motion.div>
+    </>
   );
 }
