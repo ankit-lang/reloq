@@ -200,7 +200,7 @@ Packing Services</a></li>
             {/* </div> */}
             
             <div className="mb-8 max-w-4xl flex-col items-center justify-center ">
-              <motion.h2 className="text-5xl font-semibold mb-2" variants={fadeIn}>
+              <motion.h2 className="text-6xl font-bold mb-2" variants={fadeIn}>
                 
                 <SplitText
   text=" Relocation Made Easy with Relo8U "
@@ -236,7 +236,7 @@ Packing Services</a></li>
               <motion.div variants={fadeIn}>
               <Button
                 size="lg"
-                className="bg-orange-500 text-center mt-10 mx-auto hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold"
+                className="bg-orange-500 text-center mt-8 mx-auto hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold"
               >
                 Get a Free Quote
               </Button>
