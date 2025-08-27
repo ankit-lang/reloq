@@ -32,6 +32,63 @@ import { motion } from 'framer-motion';
 import FadeContent from '@/components/Fade';
 import AnimatedContent from '@/components/Culttext';
 
+
+import styled from 'styled-components';
+
+const StyledWrapper = styled.div`
+  .cssbuttons-io-button {
+    background: #F26B22;
+    color: white;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+  }
+
+  .cssbuttons-io-button .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    // box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    right: 0.3em;
+    transition: all 0.3s;
+  }
+
+  .cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+  }
+
+  .cssbuttons-io-button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #7b52b9;
+  }
+
+  .cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+  }
+
+  .cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+  }`;
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -64,6 +121,56 @@ export default function Home() {
     },
   };
 
+  
+const StyledWrapper2 = styled.div`
+  .btn {
+   width: 6.5em;
+   height: 2.3em;
+   margin: 0.5em;
+   background: #F26B22;
+   color: white;
+   border: none;
+   border-radius: 0.625em;
+   font-size: 20px;
+   font-weight: bold;
+   cursor: pointer;
+   position: relative;
+   z-index: 1;
+   overflow: hidden;
+  }
+
+  button:hover {
+   color: black;
+  }
+
+  button:after {
+   content: "";
+   background: white;
+   position: absolute;
+   z-index: -1;
+   left: -20%;
+   right: -20%;
+   top: 0;
+   bottom: 0;
+   transform: skewX(-45deg) scale(0, 1);
+   transition: all 0.5s;
+  }
+
+  button:hover:after {
+   transform: skewX(-45deg) scale(1, 1);
+   -webkit-transition: all 0.5s;
+   transition: all 0.5s;
+  }`;
+
+  const StyledWrapper3 = styled.div`
+  .card {
+    width: 390px;
+    height: 454px;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+  }`;
   return (
     <>
     <motion.div
@@ -83,22 +190,22 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: "#E66003" }}>
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Reloq8U</h1>
-                <p className="text-sm text-orange-500 font-medium">Moving</p>
+                <p className="text-sm font-medium" style={{ color: "#E66003" }}>Moving</p>
               </div>
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
               <div className="hidden md:flex items-center space-x-2 text-sm">
-                <Phone className="w-4 h-4 text-orange-500" />
+                <Phone className="w-4 h-4" style={{ color: "#E66003" }} />
                 <span className="font-medium">(+416) 301-2222</span>
               </div>
               <div className="hidden md:flex items-center space-x-2 text-sm">
-                <Mail className="w-4 h-4 text-orange-500" />
+                <Mail className="w-4 h-4" style={{ color: "#E66003" }} />
                 <span>relo8u8u@gmail.com</span>
               </div>
             </div>
@@ -113,11 +220,11 @@ export default function Home() {
             </button>
           </div>
         </div>
-          <nav className="hidden md:flex p-4 justify-center font-bold bg-orange-500 items-center space-x-8">
+          <nav className="hidden md:flex p-4  justify-center font-bold items-center space-x-8" style={{ backgroundColor: "#F26B22" }}>
             <a href="#home" className="text-white font-medium">Home</a>
             <div className="relative group">
               <a href="#services" className="text-white font-medium">Services ˅</a>
-              <div className="absolute hidden group-hover:block z-10 bg-white shadow-lg rounded-lg mt-2">
+              <div className="absolute hidden group-hover:block z-10 bg-white shadow-lg rounded-lg mt-0">
                 <ul className="text-gray-700 w-[12vw] text-sm">
             
 
@@ -140,7 +247,7 @@ Packing Services</a></li>
             <a href="#contact" className="text-white font-medium">Contact</a>
           </nav>
 
-          <div id="mobile-menu" className="hidden md:hidden bg-orange-500 text-white">
+          <div id="mobile-menu" className="hidden md:hidden text-white" style={{ backgroundColor: "#F26B22" }}>
             <ul className="text-sm">
               <li><a href="#home" className="block px-4 py-2">Home</a></li>
               <li className="relative">
@@ -203,20 +310,20 @@ Packing Services</a></li>
               <motion.h2 className="text-6xl font-bold mb-2" variants={fadeIn}>
                 
                 <SplitText
-  text=" Relocation Made Easy with Relo8U "
-  className="text-left md:text-center font-semibold "
-  delay={100}
-  duration={2}
-  ease="power3.out"
-  splitType="words"
-  from={{ opacity: 0, y: 40 }}
-  to={{ opacity: 1, y: 0 }}
-  threshold={0.1}
-  rootMargin="-100px"
-  textAlign="left"
-  // onLetterAnimationComplete={handleAnimationComplete}
+                  text=" Relocation Made Easy with Relo8U "
+                  className="text-left md:text-center font-semibold "
+                  delay={100}
+                  duration={2}
+                  ease="power3.out"
+                  splitType="words"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="-100px"
+                  textAlign="left"
+                  // onLetterAnimationComplete={handleAnimationComplete}
 />
-               <span className="text-orange-500">Your Moving Partner.</span>
+               <span style={{ color: "#F26B22" }}>Your Moving Partner.</span>
               
               </motion.h2>
               <motion.p
@@ -234,12 +341,24 @@ Packing Services</a></li>
               </motion.p>
   </div>  
               <motion.div variants={fadeIn}>
-              <Button
+                <StyledWrapper>
+      <button className="cssbuttons-io-button">
+        Get A Quote
+        <div className="icon">
+          <svg height={24} width={24} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor" />
+          </svg>
+        </div>
+      </button>
+    </StyledWrapper>
+              {/* <Button
                 size="lg"
-                className="bg-orange-500 text-center mt-8 mx-auto hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold"
+                className="text-center mt-8 mx-auto text-white px-8 py-3 text-lg font-semibold"
+                style={{ backgroundColor: "#F26B22" }}
               >
                 Get a Free Quote
-              </Button>
+              </Button> */}
               </motion.div>
             </motion.div>
         </motion.div>
@@ -269,7 +388,7 @@ Packing Services</a></li>
   delay={0.3}
 >
               <div className="mb-8">
-                <Badge className="bg-orange-500 text-white mb-4 text-sm px-3 py-1">
+                <Badge className="text-white mb-4 text-sm px-3 py-1" style={{ backgroundColor: "#E66003" }}>
                   YOUR 5-STAR MOVING COMPANY!
                 </Badge>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -339,7 +458,7 @@ Packing Services</a></li>
 >
             <div>
               <Card className="shadow-2xl border-0">
-                <CardHeader className="bg-orange-500 text-white">
+                <CardHeader style={{ backgroundColor: "#F26B22", color: "white" }}>
                   <CardTitle className="text-center text-2xl font-bold">
                     GET A FREE MOVING QUOTE
                   </CardTitle>
@@ -436,10 +555,13 @@ Packing Services</a></li>
                         </SelectContent>
                       </Select>
                     </div> */}
-                    
-                    <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 font-semibold">
-                      Get Quote
-                    </Button>
+                     <StyledWrapper2>
+      <button className="btn !inline-block !w-full"> Get Quote
+      </button>
+    </StyledWrapper2>
+                    {/* <Button className="w-full text-white py-3 font-semibold hover:bg-[#E66003]" style={{ backgroundColor: "#F26B22" }}>
+                      
+                    </Button> */}
                   </form>
                 </CardContent>
               </Card>
@@ -475,7 +597,7 @@ Packing Services</a></li>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm" style={{ backgroundColor: "#F26B22" }}>
                     1
                   </div>
                   <div>
@@ -487,7 +609,7 @@ Packing Services</a></li>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm" style={{ backgroundColor: "#F26B22" }}>
                     2
                   </div>
                   <div>
@@ -499,7 +621,7 @@ Packing Services</a></li>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm" style={{ backgroundColor: "#F26B22" }}>
                     3
                   </div>
                   <div>
@@ -511,7 +633,7 @@ Packing Services</a></li>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-orange-500 p-[7px] text-white rounded-full flex items-center justify-center font-bold text-sm">
+                  <div className="w-8 h-8 p-[7px] rounded-full flex items-center justify-center font-bold text-sm" style={{ backgroundColor: "#F26B22" }}>
                     4
                   </div>
                   <div>
@@ -523,7 +645,7 @@ Packing Services</a></li>
                 </div>
               </div>
               
-              <Button className="mt-8 bg-orange-500 hover:bg-orange-600 text-white px-6 py-2">
+              <Button className="mt-8 text-white px-6 py-2 hover:bg-[#E66003]" style={{ backgroundColor: "#F26B22" }}>
                 Get More
               </Button>
             </div>
@@ -543,31 +665,35 @@ Packing Services</a></li>
         <motion.div className="relative container mx-auto px-4 text-center" variants={fadeIn}>
           <div className="mb-12">
             <div className="flex items-center justify-center mb-4">
-              <Star className="w-8 h-8 text-orange-500 mr-2" />
+              <Star className="w-8 h-8 mr-2" style={{ color: "#E66003" }} />
               <h2 className="text-3xl font-bold text-gray-900">Hear It From Our Customers!</h2>
             </div>
-            <Badge className="bg-orange-500 text-white">Our Satisfied Clients</Badge>
+            <Badge className="text-white" style={{ backgroundColor: "#E66003" }}>Our Satisfied Clients</Badge>
           </div>
           
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="bg-white shadow-lg border-0 p-6">
+                 <StyledWrapper3>
+      <div className="" />
+   
+                <Card key={index} className="bg-white card shadow-lg border-0 p-6">
                   <CardContent className="p-0">
                     <div className="flex items-center mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-orange-500 fill-current" />
+                        <Star key={i} className="w-5 h-5 fill-current" style={{ color: "#F26B22" }} />
                       ))}
                     </div>
                     <p className="text-gray-700 mb-6 leading-relaxed italic">
                       "{testimonial.text}"
                     </p>
                     <div className="text-right">
-                      <p className="font-semibold text-orange-500">{testimonial.name}</p>
+                      <p className="font-semibold" style={{ color: "#E66003" }}>{testimonial.name}</p>
                       <p className="text-sm text-gray-600">{testimonial.location}</p>
                     </div>
                   </CardContent>
                 </Card>
+              </StyledWrapper3>
               ))}
             </div>
           </div>
@@ -593,7 +719,7 @@ Packing Services</a></li>
             </div>
             <div>
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-2">
-                Our Mission: <span className="text-orange-500">Stress-Free Moving and Storage</span>
+                Our Mission: <span style={{ color: "#E66003" }}>Stress-Free Moving and Storage</span>
               </h2>
               
               <div className="space-y-4 text-gray-700 text-center leading-relaxed">
@@ -647,32 +773,32 @@ Packing Services</a></li>
         {/* ...existing code... */}
         <motion.div className="container mx-auto px-4 text-center" variants={fadeIn}>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-             <span className="text-orange-500">Why Choose Us ?</span>
+             <span style={{ color: "#F26B22" }}>Why Choose Us ?</span>
           </h2>
           
           <div className="mt-16 grid md:grid-cols-3 gap-12 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+              <div className="w-32 h-32 mx-auto mb-6 rounded-full flex items-center justify-center shadow-lg" style={{ background: "linear-gradient(to bottom right, #F26B22, #F26B22)" }}>
                 <Shield className="w-16 h-16 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Reloq8U</h3>
-              <p className="text-blue-500 font-semibold">PAINTING</p>
+              <p className="font-semibold" style={{ color: "#E66003" }}>PAINTING</p>
             </div>
             
             <div className="text-center">
-              <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg">
+              <div className="w-32 h-32 mx-auto mb-6 rounded-full flex items-center justify-center shadow-lg" style={{ background: "linear-gradient(to bottom right, #F26B22, #F26B22)" }}>
                 <Shield className="w-16 h-16 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Reloq8U</h3>
-              <p className="text-green-500 font-semibold">CLEANING</p>
+              <p className="font-semibold" style={{ color: "#E66003" }}>CLEANING</p>
             </div>
             
             <div className="text-center">
-              <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+              <div className="w-32 h-32 mx-auto mb-6 rounded-full flex items-center justify-center shadow-lg" style={{ background: "linear-gradient(to bottom right, #F26B22, #F26B22)" }}>
                 <Shield className="w-16 h-16 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Reloq8U</h3>
-              <p className="text-orange-500 font-semibold">CONTRACTING</p>
+              <p className="font-semibold" style={{ color: "#E66003" }}>CONTRACTING</p>
             </div>
           </div>
         </motion.div>
@@ -697,7 +823,7 @@ Packing Services</a></li>
             </div>
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                Are you a <span className="text-orange-500">Realtor?</span>
+                Are you a <span style={{ color: "#E66003" }}>Realtor?</span>
               </h2>
               <h3 className="text-xl font-semibold text-gray-700 mb-6">Connect with us today!</h3>
               
@@ -740,7 +866,7 @@ Packing Services</a></li>
                 </p>
               </div>
               
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3">
+              <Button className="text-white px-6 py-3 hover:bg-[#E66003]" style={{ backgroundColor: "#F26B22" }}>
                 Learn More!
               </Button>
             </div>
@@ -759,11 +885,11 @@ Packing Services</a></li>
         <motion.div className="container mx-auto px-4 text-center" variants={fadeIn}>
           <div className="mb-8">
             <p className="text-gray-700 mb-2">
-              AM – 8 PM, 7 Days a Week
+               8 AM – 8 PM, 7 Days a Week
               We are available  from 8 AM – 8 PM, 7 Days a Week for additional questions, you can call us
             </p>
             <p className="text-gray-700">
-              at <span className="font-bold text-orange-500">(647) 295-6444</span> 
+              at <span className="font-bold" style={{ color: "#E66003" }}>(647) 295-6444</span> 
             </p>
           </div>
           
@@ -779,7 +905,8 @@ Packing Services</a></li>
 
       {/* Footer */}
       <motion.footer
-        className="bg-[#ff9902] md:px-32 text-white py-16"
+        className="md:px-32 text-white py-16"
+        style={{ backgroundColor: "#F26B22" }}
         variants={fadeIn}
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -819,27 +946,27 @@ Packing Services</a></li>
             <div>
               <h4 className="font-bold md:text-xl mb-6">Useful Links</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#" className="hover:text-orange-200 ">Home</a></li>
-                <li><a href="#" className="hover:text-orange-200">About Us</a></li>
-                <li><a href="#" className="hover:text-orange-200">Testimonials</a></li>
-                <li><a href="#" className="hover:text-orange-200">Moving Tips</a></li>
-                <li><a href="#" className="hover:text-orange-200">FAQs</a></li>
-                <li><a href="#" className="hover:text-orange-200">Realtor Program</a></li>
+                <li><a href="#" className="hover:text-[]">Home</a></li>
+                <li><a href="#" className="hover:text-[#]">About Us</a></li>
+                <li><a href="#" className="hover:text-[#]">Testimonials</a></li>
+                <li><a href="#" className="hover:text-[#]">Moving Tips</a></li>
+                <li><a href="#" className="hover:text-[#]">FAQs</a></li>
+                <li><a href="#" className="hover:text-[#]">Realtor Program</a></li>
               </ul>
             </div>
             
             <div>
               <h4 className="font-bold text-lg mb-6">Services</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#" className="hover:text-orange-200">Residential Moving</a></li>
-                <li><a href="#" className="hover:text-orange-200">Furniture Moving</a></li>
-                <li><a href="#" className="hover:text-orange-200">Last Minute Moving</a></li>
-                <li><a href="#" className="hover:text-orange-200">Packing Services</a></li>
-                <li><a href="#" className="hover:text-orange-200">Condominium Moving</a></li>
-                <li><a href="#" className="hover:text-orange-200">Commercial Moving</a></li>
-                <li><a href="#" className="hover:text-orange-200">Long Distance Moving</a></li>
-                <li><a href="#" className="hover:text-orange-200">Single Item</a></li>
-                <li><a href="#" className="hover:text-orange-200">Junk Removal</a></li>
+                <li><a href="#" className="hover:text-[#]">Residential Moving</a></li>
+                <li><a href="#" className="hover:text-[#]">Furniture Moving</a></li>
+                <li><a href="#" className="hover:text-[#]">Last Minute Moving</a></li>
+                <li><a href="#" className="hover:text-[#]">Packing Services</a></li>
+                <li><a href="#" className="hover:text-[#]">Condominium Moving</a></li>
+                <li><a href="#" className="hover:text-[#]">Commercial Moving</a></li>
+                <li><a href="#" className="hover:text-[#]">Long Distance Moving</a></li>
+                <li><a href="#" className="hover:text-[#]">Single Item</a></li>
+                <li><a href="#" className="hover:text-[#]">Junk Removal</a></li>
               </ul>
             </div>
             
@@ -868,7 +995,7 @@ Packing Services</a></li>
         </div>
       </motion.footer>
           <div className="border-t text-black/90 border-white/20  p-5 text-center text-lg">
-            <p>Copyright © 2025 Reloq8U Company | <a href="#" className="underline">Privacy Policy</a></p>
+            <p>Copyright © 2025 Reloq8U Company | <a href="#" className="underline hover:text-[#E66003]">Privacy Policy</a></p>
             {/* <p className="mt-2">Made By <a href="#" className="underline">Reloq Group - Get a Quote for Web Design Development Services - across the Streets to Us</a></p> */}
           </div>
     </motion.div>
