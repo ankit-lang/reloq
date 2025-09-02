@@ -34,6 +34,9 @@ import AnimatedContent from '@/components/Culttext';
 
 
 import styled from 'styled-components';
+import Header from '@/components/Header';
+import Form from '@/components/Form';
+import Footer from '@/components/Footer';
 
 const StyledWrapper = styled.div`
   .cssbuttons-io-button {
@@ -94,17 +97,30 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Emily Turner",
-      location: "Oakville, ON",
+      name: "Emily R.",
+      location: "Calgary",
       rating: 5,
-      text: "Kratos Moving Company provided outstanding professional service during our move to Oakville. David and his crew were friendly, efficient, and incredibly careful with our belongings. They handled everything with care, making our move stress-free and seamless. The entire team was punctual and respectful while in our home. I highly recommend Kratos Moving Company for anyone in need of a reliable and efficient moving service."
+      text: "Reloq8U made our move to Calgary absolutely stress-free! The team was punctual, polite, and handled all our furniture with such care. Everything arrived on time and in perfect condition. Highly recommend them for a worry-free moving experience."
     },
     {
-      name: "Robert Liu",
-      location: "Vaughan, ON", 
+      name: "Robert L.",
+      location: "Vancouver", 
       rating: 5,
-      text: "Excellent choice within budgets. From the initial consultation to the final delivery, everything was handled professionally. The crew was punctual, efficient, and extremely careful with all our items. They provided clear communication at every step, and worked tirelessly to ensure everything was done right. I am thoroughly impressed with their service and would highly recommend Kratos Moving Company to anyone looking for a reliable moving service."
-    }
+      text: "From booking to unpacking, the entire process was seamless. The support team was always available for updates, and the movers were efficient and professional. Reloq8U turned what I thought would be a stressful day into a smooth transition."
+    }, {
+      name: "Anna W.",
+      location: "Toronto", 
+      rating: 5,
+      text: "We had a fantastic experience with Reloq8U for our office relocation in Toronto. The crew worked quickly, protected all our equipment, and ensured we could set up at our new place without delay. Truly reliable service!"
+    },
+      {
+      name: "Lisa M.",
+      location: "Ottawa", 
+      rating: 5,
+      text: "I can’t thank Reloq8U enough for their dedication. The movers were courteous, well-prepared, and treated our belongings like their own. Moving to Ottawa felt effortless because of them. Absolutely recommend their services"
+    },
+    
+    
   ];
 
   // Animation variants
@@ -165,7 +181,7 @@ const StyledWrapper2 = styled.div`
   const StyledWrapper3 = styled.div`
   .card {
     width: 390px;
-    height: 454px;
+    height: 354px;
     border-radius: 30px;
     background: #e0e0e0;
     box-shadow: 15px 15px 30px #bebebe,
@@ -181,98 +197,7 @@ const StyledWrapper2 = styled.div`
       variants={staggerContainer}
     >
       {/* Header */}
-      <motion.header
-        className="bg-white shadow-sm border-b"
-        variants={fadeIn}
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: "#E66003" }}>
-                <Shield className="w-8 h-8 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Reloq8U</h1>
-                <p className="text-sm font-medium" style={{ color: "#E66003" }}>Moving</p>
-              </div>
-            </div>
-
-            <div className="hidden md:flex items-center space-x-4">
-              <div className="hidden md:flex items-center space-x-2 text-sm">
-                <Phone className="w-4 h-4" style={{ color: "#E66003" }} />
-                <span className="font-medium">(+416) 301-2222</span>
-              </div>
-              <div className="hidden md:flex items-center space-x-2 text-sm">
-                <Mail className="w-4 h-4" style={{ color: "#E66003" }} />
-                <span>relo8u8u@gmail.com</span>
-              </div>
-            </div>
-
-            <button
-              className="md:hidden text-orange-500"
-              onClick={() => document.getElementById('mobile-menu')?.classList.toggle('hidden')}
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
-        </div>
-          <nav className="hidden md:flex p-4  justify-center font-bold items-center space-x-8" style={{ backgroundColor: "#F26B22" }}>
-            <a href="#home" className="text-white font-medium">Home</a>
-            <div className="relative group">
-              <a href="#services" className="text-white font-medium">Services ˅</a>
-              <div className="absolute hidden group-hover:block z-10 bg-white shadow-lg rounded-lg mt-0">
-                <ul className="text-gray-700 w-[12vw] text-sm">
-            
-
-
-
-                  <li><a href="#residential" className="block px-4 py-2 hover:bg-gray-100">Residential Moving</a></li>
-                  <li><a href="#commercial" className="block px-4 py-2 hover:bg-gray-100">
-Apartment & Condo Moving</a></li>
-                  <li><a href="#long-distance" className="block px-4 py-2 hover:bg-gray-100">
-Inter-Province Relocation</a></li>
-                  <li><a href="#packing" className="block px-4 py-2 hover:bg-gray-100">
-Packing Services</a></li>
-                </ul>
-              </div>
-            </div>
-            <a href="#locations" className="text-white font-medium">Locations (A-M)</a>
-            <a href="#locations2" className="text-white font-medium">Locations (N-Z)</a>
-            <a href="#about" className="text-white font-medium">About</a>
-            <a href="#blog" className="text-white font-medium">Blog</a>
-            <a href="#contact" className="text-white font-medium">Contact</a>
-          </nav>
-
-          <div id="mobile-menu" className="hidden md:hidden text-white" style={{ backgroundColor: "#F26B22" }}>
-            <ul className="text-sm">
-              <li><a href="#home" className="block px-4 py-2">Home</a></li>
-              <li className="relative">
-                <button
-                  className="block px-4 py-2 w-full text-left"
-                  onClick={(e) => e.currentTarget.nextElementSibling?.classList.toggle('hidden')}
-                >
-                  Services
-                </button>
-                <ul className="hidden bg-white text-gray-700 text-sm">
-                  <li><a href="#residential" className="block px-4 py-2 hover:bg-gray-100">Residential Moving</a></li>
-                  <li><a href="#commercial" className="block px-4 py-2 hover:bg-gray-100">Apartment & Condo Moving</a></li>
-                  <li><a href="#long-distance" className="block px-4 py-2 hover:bg-gray-100">Inter-Province Relocation</a></li>
-                  <li><a href="#packing" className="block px-4 py-2 hover:bg-gray-100">Packing Services</a></li>
-                </ul>
-              </li>
-              <li><a href="#locations" className="block px-4 py-2">Locations (A-M)</a></li>
-              <li><a href="#locations2" className="block px-4 py-2">Locations (N-Z)</a></li>
-              <li><a href="#about" className="block px-4 py-2">About</a></li>
-              <li><a href="#blog" className="block px-4 py-2">Blog</a></li>
-              <li><a href="#contact" className="block px-4 py-2">Contact</a></li>
-            </ul>
-          </div>
-      </motion.header>
-
+  <Header/>
       {/* Hero Section */}
       <motion.section
         id="home"
@@ -398,31 +323,20 @@ Packing Services</a></li>
               
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-  <div>In an industry often clouded by uncertainty, Kratos Moving Company stands 
-                  as a beacon of trust and reliability. We're not just movers; we're your 
-                  partners in seamless transitions. Whether you're a local business seeking a 
-                  dependable moving solution, a family embarking on a new adventure, or an 
-                  individual planning a fresh start—our passion, let our passion and 
-                  purpose. Our expert team brings unmatched professionalism and cost to 
-                  every job.</div>
+  <div>At Reloq8U, we go beyond being just a moving company—we’re your trusted partner in smooth, stress-free transitions. In a field where uncertainty is common, we stand out with reliability, transparency, and unmatched professionalism.
+</div>
                   {/* <TextAnimate text=" " type="rollIn" /> */}
 
                  
                 </p>
                 
                 <p>
-                  From residential moves and commercial transitions to secure storage 
-                  solutions and warehousing, we tailor our services to meet your unique 
-                  needs. Our passion lies in making your move stress-free, handling every 
-                  detail with precision, and creating your belongings as if they were our own.
+                Whether you’re relocating your family to a new home, moving your office across town, or in need of safe and secure storage, our expert team tailors solutions to your unique needs. From residential and commercial moves to warehousing and storage, we handle every detail with precision and care.
                 </p>
                 
                 <p>
-                  Backed by the renowned Kratos Group of Companies, our commitment to 
-                  excellence, transparency, and reliability reflects the strength and 
-                  resilience of our brand. Every job with Kratos Moving, you're not just hiring 
-                  movers—you're choosing peace of mind; rest up prime beat easy and worry-
-                  free moving can be.
+                  Powered by innovation and guided by customer-first values, Reloq8U ensures your belongings are treated as if they were our own. With us, you don’t just hire movers—you gain peace of mind. Experience how effortless moving can truly be, with Reloq8U by your side.
+
                 </p>
               </div>
 
@@ -430,16 +344,15 @@ Packing Services</a></li>
               <div className="mt-8">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
                   <CheckCircle className="w-6 h-6 text-blue-500 mr-2" />
-                  Moving Internationally?
+                  Moving Abroad? Let Reloq8U Take You There
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  International or moving from outside of Kratos Moving Company is best to make it happen! Moving Internationally can feel overwhelming, 
-                  but with our expertise, it doesn't have to be. From handling logistics to ensuring your belongings are safely transported across borders, we take 
-                  the stress out of global relocations.
+                 Starting a new life in another country should be exciting—not stressful. At Reloq8U, we simplify international relocations so you can focus on your fresh start. From careful packing to managing logistics and safe transport across borders, our team ensures every step of your journey is seamless.
                 </p>
                 <p className="text-gray-700 leading-relaxed mt-4">
-                  Whether it's packing, paperwork, or customs clearance, our team has you covered every step of the way. Trust Kratos Moving to make your 
-                  international move seamless and secure. Your new adventure starts here!
+                 Customs clearance, paperwork, or handling delicate belongings—we’ve got it all covered with professionalism and care. With Reloq8U as your moving partner, you can trust that your transition overseas will be smooth, secure, and worry-free.
+Your global adventure begins with us. Let Reloq8U make it effortless.
+
                 </p>
               </div>
             </div>
@@ -457,114 +370,7 @@ Packing Services</a></li>
   delay={0.3}
 >
             <div>
-              <Card className="shadow-2xl border-0">
-                <CardHeader style={{ backgroundColor: "#F26B22", color: "white" }}>
-                  <CardTitle className="text-center text-2xl font-bold">
-                    GET A FREE MOVING QUOTE
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-8">
-                  <form className="space-y-6">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="first-name" className="font-medium">First Name</Label>
-                        <Input id="first-name" className="mt-1" />
-                      </div>
-                      <div>
-                        <Label htmlFor="last-name" className="font-medium">Last Name</Label>
-                        <Input id="last-name" className="mt-1" />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="email" className="font-medium">Your Email</Label>
-                      <Input id="email" type="email" className="mt-1" />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="phone" className="font-medium">Your Phone Number</Label>
-                      <Input id="phone" type="tel" className="mt-1" />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="move-from" className="font-medium">Moving From</Label>
-                      <Input id="move-from" placeholder="Current address" className="mt-1" />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="move-to" className="font-medium">Moving To</Label>
-                      <Input id="move-to" placeholder="Destination address" className="mt-1" />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="move-date" className="font-medium">Moving Date</Label>
-                      <Input id="move-date" type="date" className="mt-1" />
-                    </div>
-                    
-                    <div>
-                      {/* <Label htmlFor="bedrooms" className="font-medium">Bedrooms</Label>
-                      <Select>
-                        <SelectTrigger className="mt-1">
-                          <SelectValue placeholder="Select number of bedrooms" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="studio">Studio</SelectItem>
-                          <SelectItem value="1">1 Bedroom</SelectItem>
-                          <SelectItem value="2">2 Bedrooms</SelectItem>
-                          <SelectItem value="3">3 Bedrooms</SelectItem>
-                          <SelectItem value="4">4+ Bedrooms</SelectItem>
-                        </SelectContent>
-                      </Select> */}
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="service-type" className="font-medium">Type of Moving Service</Label>
-                      <Select>
-                        <SelectTrigger className="mt-1">
-                          <SelectValue placeholder="Select service type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="residential">Residential Moving</SelectItem>
-                          <SelectItem value="commercial">Commercial Moving</SelectItem>
-                          <SelectItem value="long-distance">Long Distance Moving</SelectItem>
-                          <SelectItem value="international">International Moving</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="additional-info" className="font-medium">Additional Information</Label>
-                      <Textarea 
-                        id="additional-info" 
-                        placeholder="Tell us about any special requirements..."
-                        className="mt-1"
-                        rows={3}
-                      />
-                    </div>
-                    
-                    {/* <div>
-                      <Label className="font-medium">What Kind of Quote Would You Like?</Label>
-                      <Select>
-                        <SelectTrigger className="mt-1">
-                          <SelectValue placeholder="Select quote type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="phone">Phone Quote</SelectItem>
-                          <SelectItem value="email">Email Quote</SelectItem>
-                          <SelectItem value="in-person">In-Person Assessment</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div> */}
-                     <StyledWrapper2>
-      <button className="btn !inline-block !w-full"> Get Quote
-      </button>
-    </StyledWrapper2>
-                    {/* <Button className="w-full text-white py-3 font-semibold hover:bg-[#E66003]" style={{ backgroundColor: "#F26B22" }}>
-                      
-                    </Button> */}
-                  </form>
-                </CardContent>
-              </Card>
+             <Form/>
             </div>
             </AnimatedContent>
           </div>
@@ -592,8 +398,8 @@ Packing Services</a></li>
             <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0.1}>
   {/* Anything placed inside this container will be fade into view */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Our Moving Process:</h2>
-              <h3 className="text-2xl font-semibold text-gray-700 mb-8">How Do We Work?</h3>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Our Process: </h2>
+              <h3 className="text-2xl font-semibold text-gray-700 mb-8">Moving Made Simple</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -601,9 +407,9 @@ Packing Services</a></li>
                     1
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Booking and Setting the Schedule</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Easy Booking & Schedule Confirmation </h4>
                     <p className="text-gray-700">
-                      Finalize your booking by confirming the moving date and time with us.
+                     Secure your move in just a few clicks. Choose the date and time that works best for you, and we’ll lock it in.
                     </p>
                   </div>
                 </div>
@@ -613,9 +419,11 @@ Packing Services</a></li>
                     2
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Packing and Ready-Made Preparations</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Professional Packing Options </h4>
                     <p className="text-gray-700">
-                      Get to pack on your own or utilize our expert packing services for a professional touch.
+                     Pack your way or leave it to us. Our expert packing services ensure your belongings are safe, organized, and move-ready.
+
+
                     </p>
                   </div>
                 </div>
@@ -625,10 +433,10 @@ Packing Services</a></li>
                     3
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Load-Up and Transit</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Safe Loading & Smooth Transit </h4>
                     <p className="text-gray-700">
-                      Let our professional secure loading of your possessions into our vehicles.
-                    </p>
+                  Our trained team handles your possessions with care, ensuring punctual pickup and secure transport to your new destination.
+  </p>
                   </div>
                 </div>
                 
@@ -637,17 +445,17 @@ Packing Services</a></li>
                     4
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Arrival and Unpacking Assistance</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Unloading & Setup Support </h4>
                     <p className="text-gray-700">
-                      We assist with unloading, unpacking, and arranging your items, getting your transition to your new space.
-                    </p>
+                   Upon arrival, we don’t just drop off—we help unload, unpack, and arrange, making your transition into your new space stress-free.
+ </p>
                   </div>
                 </div>
               </div>
               
-              <Button className="mt-8 text-white px-6 py-2 hover:bg-[#E66003]" style={{ backgroundColor: "#F26B22" }}>
+              {/* <Button className="mt-8 text-white px-6 py-2 hover:bg-[#E66003]" style={{ backgroundColor: "#F26B22" }}>
                 Get More
-              </Button>
+              </Button> */}
             </div>
 </FadeContent>
           </div>
@@ -666,7 +474,7 @@ Packing Services</a></li>
           <div className="mb-12">
             <div className="flex items-center justify-center mb-4">
               <Star className="w-8 h-8 mr-2" style={{ color: "#E66003" }} />
-              <h2 className="text-3xl font-bold text-gray-900">Hear It From Our Customers!</h2>
+              <h2 className="text-3xl font-bold text-gray-900">What Our Customers Say About Us</h2>
             </div>
             <Badge className="text-white" style={{ backgroundColor: "#E66003" }}>Our Satisfied Clients</Badge>
           </div>
@@ -719,12 +527,13 @@ Packing Services</a></li>
             </div>
             <div>
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-2">
-                Our Mission: <span style={{ color: "#E66003" }}>Stress-Free Moving and Storage</span>
+                Our Mission: <span style={{ color: "#E66003" }}>Moving with Care, Built on Trust</span>
               </h2>
               
-              <div className="space-y-4 text-gray-700 text-center leading-relaxed">
+              <div className="space-y-4 text-gray-700 text-justify leading-relaxed">
                 <SplitText
-  text="     At Kratos Moving Company, our promise to make your transition seamless and stress-free, providing top-quality services at competitive rates. Whether you're planning a local move or an organized moving experience, whether local or international, our dedicated team of experts ensures efficient and professional service, making your moving experience as smooth as the best prepared decision.
+  text="     At Reloq8U, our mission is simple—to take the stress out of moving and storage. We believe every transition should feel seamless, whether it’s across the street or across the globe. By combining industry expertise with personalized service, we deliver moves that are efficient, secure, and worry-free.
+
                "
   className=" text-center"
   delay={100}
@@ -740,7 +549,9 @@ Packing Services</a></li>
 />
                
                <SplitText
-  text="        We handle all aspects of your move with meticulous care and attention to detail, including packing, secure storage, and single item moves. Our mission is to exceed your expectations by taking the stress out of the entire process. Our responsibility is to make you feel comfortable and well-informed throughout the moving process. Let us take the stress out of your move, allowing you to focus on the excitement of your new beginning!"
+  text="       From packing and storage to delicate single-item handling, our skilled team approaches every job with meticulous care and attention to detail. With competitive pricing and uncompromised service quality, Reloq8U ensures your belongings are always in safe hands.
+
+We don’t just move boxes—we move lives, and our goal is to give you peace of mind so you can focus on the excitement of your next chapter.  "
   className="text-center"
   delay={100}
   duration={0.6}
@@ -773,11 +584,39 @@ Packing Services</a></li>
         {/* ...existing code... */}
         <motion.div className="container mx-auto px-4 text-center" variants={fadeIn}>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-             <span style={{ color: "#F26B22" }}>Why Choose Us ?</span>
+             <span style={{ color: "#F26B22" }}>The Reloq8U Promise - Why Choose Us ?</span>
           </h2>
-          
+          <p>With Reloq8U, you’re not just hiring movers—you’re choosing a partner who cares</p>
           <div className="mt-16 grid md:grid-cols-3 gap-12 max-w-4xl mx-auto">
-            <div className="text-center">
+             <StyledWrapperchoose>
+      <div className="cardd">
+        <p className="flex !mb-4 items-center !text-xl !text-white">
+        Transparent pricing, no hidden fees
+        </p>
+       </div>
+    </StyledWrapperchoose>
+    <StyledWrapperchoose>
+      <div className="cardd">
+        <p className="flex items-center !text-xl !text-white">
+     Trained professionals who treat your belongings like their own
+        </p>
+       </div>
+    </StyledWrapperchoose>
+    <StyledWrapperchoose>
+      <div className="cardd">
+        <p className="flex items-center !text-xl !text-white">
+      Reliable service backed by punctuality and precision
+        </p>
+       </div>
+    </StyledWrapperchoose>
+    {/* <StyledWrapperchoose>
+      <div className="cardd">
+        <p className="flex items-center !text-xl !text-white">
+       Flexible options for residential, commercial, and storage solutions
+        </p>
+       </div>
+    </StyledWrapperchoose> */}
+            {/* <div className="text-center">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full flex items-center justify-center shadow-lg" style={{ background: "linear-gradient(to bottom right, #F26B22, #F26B22)" }}>
                 <Shield className="w-16 h-16 text-white" />
               </div>
@@ -799,7 +638,7 @@ Packing Services</a></li>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Reloq8U</h3>
               <p className="font-semibold" style={{ color: "#E66003" }}>CONTRACTING</p>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </motion.section>
@@ -827,11 +666,11 @@ Packing Services</a></li>
               </h2>
               <h3 className="text-xl font-semibold text-gray-700 mb-6">Connect with us today!</h3>
               
-              <div className="space-y-4 text-gray-700 leading-relaxed mb-8">
+              <div className="space-y-4 text-gray-700  leading-relaxed mb-8">
                 <p>
                   <SplitText
-  text="Realtors looking for a reliable, cost-effective moving company should consider partnering with Kratos Moving Company. Not only will you receive cash rewards for each successful move, but you'll also benefit from greater reach through our customer network."
-  className="text-center"
+  text="Are you a realtor looking to add more value to your clients? Partner with Reloq8U to make moving day as smooth as closing day."
+  className="text-justify"
   delay={100}
   duration={0.6}
   ease="power3.out"
@@ -848,7 +687,10 @@ Packing Services</a></li>
                 
 
                 <SplitText
-  text="   Our dedicated partnership program is designed with realtors in mind — offering exclusive discounts for your clients, priority booking, and streamlined communication. When you recommend our service that reflects well on your brand. By partnering with Kratos Moving, you're not just recommending a mover — you're extending your client care beyond the closing table. Let us handle the heavy lifting while you continue to build trust and long-term relationships with every client you serve."
+  text="  Exclusive Benefits for Realtors: -Cash rewards for every successful referral,
+-Special client discounts and priority scheduling,
+-Guaranteed professional service that strengthens your reputation
+."
   className=" text-center"
   delay={100}
   duration={0.6}
@@ -862,13 +704,13 @@ Packing Services</a></li>
   // onLetterAnimationComplete={handleAnimationComplete}
 />
                 <p>
-               
+               By teaming up with Reloq8U, you extend your care beyond the deal, helping clients settle into their new homes with ease. Together, let’s build lasting trust and stronger relationships.
                 </p>
               </div>
               
-              <Button className="text-white px-6 py-3 hover:bg-[#E66003]" style={{ backgroundColor: "#F26B22" }}>
-                Learn More!
-              </Button>
+                {/* <Button className="text-white px-6 py-3 hover:bg-[#E66003]" style={{ backgroundColor: "#F26B22" }}>
+                  Learn More!
+                </Button> */}
             </div>
           </div>
         </motion.div>
@@ -904,101 +746,77 @@ Packing Services</a></li>
       </motion.section>
 
       {/* Footer */}
-      <motion.footer
-        className="md:px-32 text-white py-16"
-        style={{ backgroundColor: "#F26B22" }}
-        variants={fadeIn}
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-6">
-                {/* <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                  <Shield className="w-8 h-8 text-orange-500" />
-                </div> */}
-                <div>
-                  <h3 className="text-3xl font-bold">Reloq8U</h3>
-                  <p className="text-sm"></p>
-                </div>
-              </div>
-              <div className="space-y-2 text-sm">
-                <p className="font-semibold">Working Hours:</p>
-                <p>8 AM – 8 PM, 7 Days a Week , every day</p>
-              </div>
-              <div className="flex space-x-3 mt-6">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <Facebook className="w-4 h-4" />
-                </div>
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <Instagram className="w-4 h-4" />
-                </div>
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <Youtube className="w-4 h-4" />
-                </div>
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <Linkedin className="w-4 h-4" />
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-bold md:text-xl mb-6">Useful Links</h4>
-              <ul className="space-y-3 text-sm">
-                <li><a href="#" className="hover:text-[]">Home</a></li>
-                <li><a href="#" className="hover:text-[#]">About Us</a></li>
-                <li><a href="#" className="hover:text-[#]">Testimonials</a></li>
-                <li><a href="#" className="hover:text-[#]">Moving Tips</a></li>
-                <li><a href="#" className="hover:text-[#]">FAQs</a></li>
-                <li><a href="#" className="hover:text-[#]">Realtor Program</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-bold text-lg mb-6">Services</h4>
-              <ul className="space-y-3 text-sm">
-                <li><a href="#" className="hover:text-[#]">Residential Moving</a></li>
-                <li><a href="#" className="hover:text-[#]">Furniture Moving</a></li>
-                <li><a href="#" className="hover:text-[#]">Last Minute Moving</a></li>
-                <li><a href="#" className="hover:text-[#]">Packing Services</a></li>
-                <li><a href="#" className="hover:text-[#]">Condominium Moving</a></li>
-                <li><a href="#" className="hover:text-[#]">Commercial Moving</a></li>
-                <li><a href="#" className="hover:text-[#]">Long Distance Moving</a></li>
-                <li><a href="#" className="hover:text-[#]">Single Item</a></li>
-                <li><a href="#" className="hover:text-[#]">Junk Removal</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-bold text-lg mb-6">Contact Us</h4>
-              <div className="space-y-4 text-sm">
-                <div className="flex items-start space-x-3">
-                  <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                  <div>
-                 
-                    <p> Canada</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-4 h-4 flex-shrink-0" />
-                  <p>+1 (416) 301-2222</p>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-4 h-4 flex-shrink-0" />
-                  <p>relo8u8u@gmail.com</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </motion.footer>
-          <div className="border-t text-black/90 border-white/20  p-5 text-center text-lg">
-            <p>Copyright © 2025 Reloq8U Company | <a href="#" className="underline hover:text-[#E66003]">Privacy Policy</a></p>
-            {/* <p className="mt-2">Made By <a href="#" className="underline">Reloq Group - Get a Quote for Web Design Development Services - across the Streets to Us</a></p> */}
-          </div>
+       <Footer/>
     </motion.div>
     </>
   );
 }
+const StyledWrapperchoose = styled.div`
+  .cardd {
+    position: relative;
+    z-index: 1;
+    width: 190px;
+    height: 164px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    overflow: hidden;
+  }
+
+  .cardd::before,
+  .cardd::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    padding:10px;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .cardd::before {
+    left: -5px;
+    margin: auto;
+    width: 240px;
+    height: 264px;
+    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+    z-index: -2;
+  }
+
+  .cardd::after {
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    transform: scale(0.95);
+    filter: blur(20px);
+    z-index: -1;
+  }
+
+  .headingg {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
+    color:white;
+
+  }
+
+  .cardd p:not(.headingg) {
+    font-size: 14px;
+  }
+
+  .cardd p:last-child {
+    color: #e81cff;
+    font-weight: 600;
+  }
+
+  .cardd:hover::after {
+    filter: blur(30px);
+  }
+
+  .cardd:hover::before {
+    transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+  }
+`;
