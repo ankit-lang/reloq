@@ -406,7 +406,7 @@ Your global adventure begins with us. Let Reloq8U make it effortless.
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm" style={{ backgroundColor: "#F26B22" }}>
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm" >
                     1
                   </div>
                   <div>
@@ -418,7 +418,7 @@ Your global adventure begins with us. Let Reloq8U make it effortless.
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm" style={{ backgroundColor: "#F26B22" }}>
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm" >
                     2
                   </div>
                   <div>
@@ -432,7 +432,7 @@ Your global adventure begins with us. Let Reloq8U make it effortless.
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm" style={{ backgroundColor: "#F26B22" }}>
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm" >
                     3
                   </div>
                   <div>
@@ -444,7 +444,7 @@ Your global adventure begins with us. Let Reloq8U make it effortless.
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 p-[7px] rounded-full flex items-center justify-center font-bold text-sm" style={{ backgroundColor: "#F26B22" }}>
+                  <div className="w-8 h-8 p-[7px] rounded-full flex items-center justify-center font-bold text-sm" >
                     4
                   </div>
                   <div>
@@ -590,9 +590,9 @@ We don’t just move boxes—we move lives, and our goal is to give you peace of
              <span style={{ color: "#F26B22" }}>The Reloq8U Promise - Why Choose Us ?</span>
           </h2>
           <p>With Reloq8U, you’re not just hiring movers—you’re choosing a partner who cares</p>
-          <div className="mt-16 grid md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+          <div className="mt-16 grid md:grid-cols-3 grid-cols-1 items-center place-items-center justify-center  gap-12 max-w-4xl mx-auto">
              <StyledWrapperchoose>
-      <div className="cardd">
+      <div className="cardd   ">
         <p className="flex !mb-4 items-center !text-xl !text-white">
         Transparent pricing, no hidden fees
         </p>

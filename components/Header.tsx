@@ -234,7 +234,7 @@ const Header = () => {
               </li>
               <li><Link href="/aboutus" className="block px-4 py-2">About</Link></li>
               {/* <li><a href="#blog" className="block px-4 py-2">Blog</a></li> */}
-              <li><LInk href="/contact" className="block px-4 py-2">Contact</LInk></li>
+              <li><Link href="/contact" className="block px-4 py-2">Contact</Link></li>
             </ul>
           </div>
       </motion.header>
