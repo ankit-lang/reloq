@@ -267,8 +267,10 @@ const StyledWrapper2 = styled.div`
   </div>  
               <motion.div variants={fadeIn}>
                 <StyledWrapper>
-      <button className="cssbuttons-io-button">
-        Get A Quote
+                   <a href="#quote"> 
+      <button className="cssbuttons-io-button"  >
+        
+       Get A Quote 
         <div className="icon">
           <svg height={24} width={24} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 0h24v24H0z" fill="none" />
@@ -276,6 +278,7 @@ const StyledWrapper2 = styled.div`
           </svg>
         </div>
       </button>
+      </a>
     </StyledWrapper>
               {/* <Button
                 size="lg"
@@ -369,7 +372,7 @@ Your global adventure begins with us. Let Reloq8U make it effortless.
   threshold={0.2}
   delay={0.3}
 >
-            <div>
+            <div id="quote">
              <Form/>
             </div>
             </AnimatedContent>
