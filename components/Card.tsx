@@ -12,7 +12,12 @@ import styled from 'styled-components';
                -15px -15px 30px #ffffff;
   }`;
   import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-const Cards = ({head,sub}) => {
+interface CardsProps {
+  head: React.ReactNode;
+  sub: React.ReactNode;
+}
+
+const Cards: React.FC<CardsProps> = ({ head, sub }) => {
   return (
     <div>
          <StyledWrapper3>
