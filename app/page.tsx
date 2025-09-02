@@ -727,7 +727,7 @@ We don’t just move boxes—we move lives, and our goal is to give you peace of
         viewport={{ once: true, amount: 0.2 }}
       >
         {/* ...existing code... */}
-        <motion.div className="container mx-auto px-4 text-center" variants={fadeIn}>
+        {/* <motion.div className="container mx-auto px-4 text-center" variants={fadeIn}>
           <div className="mb-8">
             <p className="text-gray-700 mb-2">
                8 AM – 8 PM, 7 Days a Week
@@ -745,7 +745,7 @@ We don’t just move boxes—we move lives, and our goal is to give you peace of
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </motion.section>
 
       {/* Footer */}

@@ -51,7 +51,8 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: "#E66003" }}>
-                <Shield className="w-8 h-8 text-white" />
+                {/* <Shield className="w-8 h-8 text-white" /> */}
+                <img src="/2.png" alt="logo" />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Reloq8U</h1>

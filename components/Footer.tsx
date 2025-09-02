@@ -34,6 +34,7 @@ import AnimatedContent from '@/components/Culttext';
 
 
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const Footer = () => {
        const fadeIn = {
@@ -84,27 +85,27 @@ const Footer = () => {
             <div>
               <h4 className="font-bold md:text-xl mb-6">Useful Links</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#" className="hover:text-[]">Home</a></li>
-                <li><a href="#" className="hover:text-[#]">About Us</a></li>
-                <li><a href="#" className="hover:text-[#]">Testimonials</a></li>
-                <li><a href="#" className="hover:text-[#]">Moving Tips</a></li>
-                <li><a href="#" className="hover:text-[#]">FAQs</a></li>
-                <li><a href="#" className="hover:text-[#]">Realtor Program</a></li>
+                              <li><Link href="/" className="">Home</Link></li>
+                <li><Link href="/aboutus" className="">About Us</Link></li>
+                {/* <li><a href="#" className="hover:text-[#E66003]">Testimonials</a></li> */}
+                <li><Link href="/contact" className="">Contact us</Link></li>
+                {/* <li><a href="#" className="">FAQs</a></li> */}
+                {/* <li><a href="#" className="">Realtor Program</a></li> */}
               </ul>
             </div>
             
             <div>
               <h4 className="font-bold text-lg mb-6">Services</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#" className="hover:text-[#]">Residential Moving</a></li>
-                <li><a href="#" className="hover:text-[#]">Furniture Moving</a></li>
-                <li><a href="#" className="hover:text-[#]">Last Minute Moving</a></li>
-                <li><a href="#" className="hover:text-[#]">Packing Services</a></li>
-                <li><a href="#" className="hover:text-[#]">Condominium Moving</a></li>
-                <li><a href="#" className="hover:text-[#]">Commercial Moving</a></li>
-                <li><a href="#" className="hover:text-[#]">Long Distance Moving</a></li>
-                <li><a href="#" className="hover:text-[#]">Single Item</a></li>
-                <li><a href="#" className="hover:text-[#]">Junk Removal</a></li>
+                <li><Link href="/residential" className="">Residential Moving</Link></li>
+                <li><Link href="/furniture" className="">Furniture Moving</Link></li>
+                <li><Link href="/lastminute" className="">Last Minute Moving</Link></li>
+                <li><Link href="/packing" className="">Packing Services</Link></li>
+                <li><Link href="/condominium" className="">Condominium Moving</Link></li>
+                <li><Link href="/commercial" className="">Commercial Moving</Link></li>
+                <li><Link href="/longdistance" className="">Long Distance Moving</Link></li>
+                <li><Link href="/singleitemmoving" className="">Single Item</Link></li>
+                <li><Link href="/junkremoval" className="">Junk Removal</Link></li>
               </ul>
             </div>
             
@@ -120,11 +121,11 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 flex-shrink-0" />
-                  <p>+1 (416) 301-2222</p>
+                  <p>+1 (548)-384-0444</p>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 flex-shrink-0" />
-                  <p>relo8u8u@gmail.com</p>
+                  <p>dev@reloq8U8U.com </p>
                 </div>
               </div>
             </div>
@@ -133,7 +134,9 @@ const Footer = () => {
         </div>
       </motion.footer>
          <div className="border-t text-black/90 border-white/20  p-5 text-center text-lg">
-                  <p>Copyright © 2025 Reloq8U Company | <a href="#" className="underline hover:text-[#E66003]">Privacy Policy</a></p>
+                  <p>Copyright © 2025 Reloq8U Company 
+                        {/* <a href="#" className="underline hover:text-[#E66003]">Privacy Policy</a> */}
+                        </p>
                   {/* <p className="mt-2">Made By <a href="#" className="underline">Reloq Group - Get a Quote for Web Design Development Services - across the Streets to Us</a></p> */}
                 </div>
    
