@@ -162,7 +162,7 @@ const Header = () => {
                   className="block px-4 py-2 w-full text-left"
                   onClick={(e) => e.currentTarget.nextElementSibling?.classList.toggle('hidden')}
                 >
-                  Services
+                  Services <FaChevronDown />
                 </button>
                 <ul className="hidden bg-white text-gray-700 text-sm">
                   <li className="relative">
@@ -233,8 +233,8 @@ const Header = () => {
                 </ul>
               </li>
               <li><Link href="/aboutus" className="block px-4 py-2">About</Link></li>
-              <li><a href="#blog" className="block px-4 py-2">Blog</a></li>
-              <li><a href="#contact" className="block px-4 py-2">Contact</a></li>
+              {/* <li><a href="#blog" className="block px-4 py-2">Blog</a></li> */}
+              <li><LInk href="/contact" className="block px-4 py-2">Contact</LInk></li>
             </ul>
           </div>
       </motion.header>
