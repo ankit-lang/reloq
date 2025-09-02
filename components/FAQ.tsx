@@ -1,10 +1,19 @@
 import { useState } from "react";
 import { Minus, Plus } from "lucide-react";
 
-export default function FAQ({faqs}) {
-  const [openIndex, setOpenIndex] = useState(0);
+type FAQItem = {
+  question: string;
+  answer: string;
+};
 
-  const toggleFAQ = (index) => {
+interface FAQProps {
+  faqs: FAQItem[];
+}
+
+export default function FAQ({ faqs }: FAQProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
