@@ -18,7 +18,7 @@ export default function page() {
           {/* Company Info */}
           <div className="space-y-4 text-gray-700">
             <h3 className="text-xl font-semibold">
-              Reloq8U8U Moving Company
+              Reloq8U Moving Company
             </h3>
             <p>Kitchener-Waterloo, Ontario-wide + Inter-province if required</p>
 
@@ -35,10 +35,10 @@ export default function page() {
             <div>
               <p className="font-medium">Email:</p>
               <a
-                href="mailto:dev@reloq8U8U.com"
+                href="mailto:dev@reloq8U.com"
                 className="text-orange-500 hover:underline"
               >
-                dev@reloq8U8U.com
+                dev@reloq8U.com
               </a>
             </div>
 

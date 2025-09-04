@@ -60,14 +60,7 @@ From cozy apartments and family homes to large estates, our residential movers a
           </p>
 
           <p className="mt-4 text-gray-800 leading-relaxed">
-            Moving your home can be a complex and overwhelming task, but with
-            Kratos Moving, it doesn’t have to be. Our team of experienced movers
-            will handle every aspect of your residential move, from start to
-            finish. With a focus on safety, efficiency, and customer
-            satisfaction, we’ll ensure a seamless and stress-free moving
-            experience. Whether you’re moving across town or across the country,
-            we’ll customize a moving plan that fits your specific needs and
-            budget. Contact us today to learn more about how.
+           
           </p>
         </div>
 </AnimatedContent>

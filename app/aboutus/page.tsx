@@ -17,7 +17,7 @@ export default function page() {
 </span>
           </h2>
           <p className="text-gray-700 mb-4">
-           At Reloq8U8U, we promise to make your transition as seamless and stress-free as possible. Founded in 2025, we are built on trust, reliability, and a passion for helping people move forward in life.
+           At Reloq8U, we promise to make your transition as seamless and stress-free as possible. Founded in 2025, we are built on trust, reliability, and a passion for helping people move forward in life.
 
           </p>
           <p className="text-gray-700 mb-4">
@@ -34,7 +34,7 @@ export default function page() {
         {/* Video Section */}
         <div className="flex flex-col items-center">
           <h2 className="text-2xl font-bold mb-6 text-center">
-            A Dive Into <span className="text-orange-500">Kratos</span> Operations
+            A Dive Into <span className="text-orange-500">Reloq8U</span> Operations
           </h2>
           <div className="relative w-full max-w-md">
             <img
@@ -58,14 +58,14 @@ export default function page() {
         </h2>
         <div className="max-w-4xl mx-auto text-gray-700 !text-center space-y-4">
           <p>
-           In a world where moving often feels overwhelming, there was a need for a relocation company that went beyond trucks and boxes. That vision sparked the birth of Reloq8U8U, a brand founded on the values of strength, trust, and care
+           In a world where moving often feels overwhelming, there was a need for a relocation company that went beyond trucks and boxes. That vision sparked the birth of Reloq8U, a brand founded on the values of strength, trust, and care
           </p>
           <p>
             From day one, our goal was to redefine the moving experience. Instead of treating relocation as just logistics, we chose to treat it as a meaningful life transition. Behind every move is a story—a family starting a new chapter, a business expanding its reach, or an individual chasing new opportunities. At Reloq8U, we honor those stories by making the journey effortless and secure.
 
           </p>
           <p>
-        What started with a small, passionate team has grown into a trusted relocation partner. Today, Reloq8U8U offers residential moves, commercial relocations, long-distance and international services, secure storage, and specialized moving solutions—all powered by a customer-first philosophy.
+        What started with a small, passionate team has grown into a trusted relocation partner. Today, Reloq8U offers residential moves, commercial relocations, long-distance and international services, secure storage, and specialized moving solutions—all powered by a customer-first philosophy.
 
           </p>
          
