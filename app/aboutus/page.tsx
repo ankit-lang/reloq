@@ -38,7 +38,7 @@ export default function page() {
           </h2>
           <div className="relative w-full max-w-md">
             <img
-              src="/1.png" // replace with actual image
+              src="/4.png" // replace with actual image
               alt="Reloq"
               className="rounded-lg shadow-lg"
             />

@@ -31,7 +31,7 @@ import { motion } from 'framer-motion';
 // import AnimatedContent, { TextAnimate } from '@/components/Culttext';
 import FadeContent from '@/components/Fade';
 import AnimatedContent from '@/components/Culttext';
-
+import Carousel from '@/components/Carousel';
 
 import styled from 'styled-components';
 import Header from '@/components/Header';
@@ -209,7 +209,7 @@ const StyledWrapper2 = styled.div`
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.pexels.com/photos/7464230/pexels-photo-7464230.jpeg?auto=compress&cs=tinysrgb&w=1600')"
+            backgroundImage: "url('/3.png')"
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-800/60" />
@@ -393,7 +393,7 @@ Your global adventure begins with us. Let Reloq8U make it effortless.
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <img 
-                src="https://images.pexels.com/photos/5025639/pexels-photo-5025639.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/10.png"
                 alt="Professional mover on phone"
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />
@@ -523,7 +523,7 @@ Your global adventure begins with us. Let Reloq8U make it effortless.
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <img 
-                src="https://images.pexels.com/photos/5025641/pexels-photo-5025641.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="13.png"
                 alt="Kratos team member"
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />
@@ -658,7 +658,7 @@ We don’t just move boxes—we move lives, and our goal is to give you peace of
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <img 
-                src="https://images.pexels.com/photos/5025639/pexels-photo-5025639.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/11.png"
                 alt="Professional realtor consultation"
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />
